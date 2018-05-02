@@ -23,7 +23,6 @@ bot.on('message', async function (message){
             break;
         
         case "f!help" : message.channel.send('```1) f!how are you = respond : How Foolish smth is\n'+
-			'1) f!how are you = respond : How Foolish smth is\n'+
 			'2) f!foolish = respond : rate the foolishness of smth\n'+
 			'3) f!fuli = respond with waiting time : Ugh, baboons; Seriously?; Nowhere to run that I cannot run faster; Huwezi\n'+
 			'4) pong = respond : ping\n'+
