@@ -22,15 +22,17 @@ bot.on('message', async function (message){
         case "f!foolishm" : message.channel.send('MacGuy has 100% foolishness');
             break;
         
-        case "f!help" : message.channel.send('1) f!how are you = respond : How Foolish smth is');
-                        message.channel.send('2) f!foolish = respond : rate the foolishness of smth');
-                        message.channel.send('3) f!fuli = respond with waiting time : Ugh, baboons; Seriously?; Nowhere to run that I cannot run faster; Huwezi');
-                        message.channel.send('4) pong = respond : ping');
-                        message.channel.send('5) f!birthdaymac = wish a happy birthday to Mac Guy');
-                        message.channel.send('6) f!beshte, f!kion, f!bunga, f!ono = say a sentence of the charactere and a gif');
-                        
+        case "f!help" : message.channel.send('```1) f!how are you = respond : How Foolish smth is\n'+
+			'1) f!how are you = respond : How Foolish smth is\n'+
+			'2) f!foolish = respond : rate the foolishness of smth\n'+
+			'3) f!fuli = respond with waiting time : Ugh, baboons; Seriously?; Nowhere to run that I cannot run faster; Huwezi\n'+
+			'4) pong = respond : ping\n'+
+			'5) f!birthdaymac = wish a happy birthday to Mac Guy\n'+
+			'6) f!beshte, f!kion, f!bunga, f!ono = say a sentence of the charactere and a gif\n'+
+		    	'7) f!say = make the bot talk```');
             break;
-        case "f!kion" : await sleep(500 + random(500,0));
+        
+	case "f!kion" : await sleep(500 + random(500,0));
                         message.channel.send('Hevi Kabesa');
                         await sleep(500 + random(500,0));                   
                         message.channel.send('Till the Pridelands end...');
@@ -39,6 +41,7 @@ bot.on('message', async function (message){
                         await sleep(500 + random(500,0));                    
                         message.channel.send('I dont want to end up like Scar.', {file: "https://cdn.discordapp.com/attachments/355274540248596480/356530551143792662/49dc73b2bf47bdacafc40f402b2781df7f4aead9_hq.gif"});
             break;
+		    
         case "f!bunga" : await sleep(500 + random(500,0));
                          message.channel.send('Zuka Zama');
                          await sleep(500 + random(500,0));
@@ -48,6 +51,7 @@ bot.on('message', async function (message){
                          await sleep(500 + random(500,0));
                          message.channel.send('Galleallegoes', {file: "https://cdn.discordapp.com/attachments/355274540248596480/356530469266915330/Bunga-hand.gif"});
             break;
+		    
         case "f!ono" :  await sleep(500 + random(500,0));
                         message.channel.send('Kinda common knolege really');
                         await sleep(500 + random(500,0));
@@ -83,6 +87,11 @@ bot.on('message', async function (message){
             var reason = message.content.substring(10, message.content.length);
             message.channel.send(  reason + ' has ' +  Math.floor(random(100,0)) + '% foolishness'); 
             
+	}
+	if(message.content.toLowerCase().startsWith('f!say')) {
+	    var reason = message.content.substring(6, message.content.length);
+	    message.delete(); 
+	    message.channel.send(reason);
 	}
       
        
