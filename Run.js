@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+var lionkingg;
+var lionking = ["Scar","Simba","Mufasa","Nala","Shenzi","Sarabi","Rafiki","Timon","Zazu","Ed","Shenzi clan","Banzai","Great Kings of the past","Pumbaa","Sarafina","Pride Landers","Simba Pride","Mole","Kovu","Kiara","Zira","Vitani","Nuka","Outsiders","Kion","Fuli","Askari","Bunga","Ono","Beshte","Uncle Max","Ma","Timon colony","Iron Joe","Army of Scar","Sumu","Janja","Ushari","Makucha","Kiburi","Reirei","Shupavu","Nduli","Dogo","Mzingo","The Zimwi","Makucha leap","Nne","Cheezi","Chungu","Njano","Goigoi","Dogo brothers","Tamka","Mapigano","Mpishi","Mwoga","Mzingo's parliament","Tano","Nyeusi","Uroho","Mwevi","Mwizi","Kopa","Mohatu","Lion Guard","Kopa","Jasiri","Makini","Furaha","Dhahabu","Mzaha","Mtoto","Hadari","Badili","Kifaru","Herman","Ona",];
+
+
 bot.login(process.env.TOKEN);
 
 bot.on('message', async function (message){
@@ -28,7 +32,8 @@ bot.on('message', async function (message){
 			'4) pong = respond : ping\n'+
 			'5) f!birthdaymac = wish a happy birthday to Mac Guy\n'+
 			'6) f!beshte, f!kion, f!bunga, f!ono = say a sentence of the charactere and a gif\n'+
-		    	'7) f!say = make the bot talk```');
+		    	'7) f!say = make the bot talk\n'+
+		    	'8) f!random lion king = say a random name from the Lion king and Lion guard```');
             break;
         
 	case "f!kion" : await sleep(500 + random(500,0));
@@ -71,6 +76,10 @@ bot.on('message', async function (message){
             
             
         case "f!birthdaymac" : message.channel.send('**HAPPY FOOLISH BIRTHDAY Mac Guy !!!!!!!**' , {file: "https://vignette2.wikia.nocookie.net/lionguard/images/5/5b/Fuli-splash.gif"});
+            break;
+		    
+	case "f!random lion king" : lionkingg = Math.floor(Math.random() * (lionking.length - 0) + 0);  
+		        message.channel.send(lionking[lionkingg]);
             break;
             
         }
