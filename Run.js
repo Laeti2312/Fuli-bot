@@ -89,7 +89,7 @@ bot.on('message', async function (message){
             
 	}
 	if(message.content.toLowerCase().startsWith('f!say')) {
-	    var reason = message.content.substring(6, message.content.length);
+	    var reason = message.content.substring(5, message.content.length);
 	    message.delete(); 
 	    message.channel.send(reason);
 	}
