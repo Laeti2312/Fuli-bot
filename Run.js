@@ -28,6 +28,9 @@ bot.on('message', async function (message){
 	
 	case "f!bothair" : message.channel.send('Oh bothair.');
             break;
+		    
+	case "f!ballast" : message.channel.send('Oh ballast.');
+            break;
         
         case "f!help" : message.channel.send('```1) f!how are you = respond : How Foolish smth is\n'+
 			'2) f!foolish = respond : rate the foolishness of smth\n'+
@@ -37,7 +40,8 @@ bot.on('message', async function (message){
 			'6) f!beshte, f!kion, f!bunga, f!ono = say a sentence of the charactere and a gif\n'+
 		    	'7) f!say = make the bot talk\n'+
 		    	'8) f!random lion king = say a random name from the Lion king and Lion guard\n'+
-		    	'9) f!bothair = says Oh bothair.```');
+		    	'9) f!bothair = says Oh bothair.\n'+
+		    	'10) f!ballast = says Oh ballast.```');
             break;
         
 	case "f!kion" : await sleep(500 + random(500,0));
