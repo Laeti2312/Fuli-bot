@@ -34,19 +34,66 @@ bot.on('message', async function (message){
 		    
 	case "f!blast" : message.channel.send('How repetitive.');
             break;
+	
+		case "f!help" : message.channel.send({embed: {
+			    color: 3447003,
+			    author: {
+			      name: bot.user.username,
+			      icon_url: bot.user.avatarURL
+			    },
+			    title: "FuliBot Help commands",
+
+			    description: "Type these commands to get some help on how to use FuliBot",
+			    fields: [{
+				name: "f!how are you",
+				value: "respond : How Foolish smth is"
+			      },
+			      {
+				name: "f!foolish",
+				value: "respond : rate the foolishness of smth"
+			      },
+			      {
+				name: "f!fuli f!beshte f!kion f!bunga f!ono",
+				value: "say a sentence of the characters with delay and a gif"
+			      },
+			      {
+				name: "pong",
+				value: "respond with ping"
+			      },
+			      {
+				name: "f!birthdaymac",
+				value: "wish a happy birthday to Mac Guy"
+			      },
+			      {
+				name: "f!say",
+				value: "make the bot talk"
+			      },
+			      {
+				name: "f!random lion king",
+				value: "say a random name from the Lion king and Lion guard"
+			      },
+			      {
+				name: "f!bothair",
+				value: "says Oh bothair."
+			      },
+			      {
+				name: "f!ballast",
+				value: "says Oh ballast."
+			      },
+			      {
+				name: "f!blast",
+				value: "says How repetitive."
+			      },
+			    ],
+			    timestamp: new Date(),
+			    footer: {
+			      icon_url: bot.user.avatarURL,
+			      text: "© FuliBot"
+			    }
+			  }
+			});
+	    break;
         
-        case "f!help" : message.channel.send('```1) f!how are you = respond : How Foolish smth is\n'+
-			'2) f!foolish = respond : rate the foolishness of smth\n'+
-			'3) f!fuli = respond with waiting time : Ugh, baboons; Seriously?; Nowhere to run that I cannot run faster; Huwezi\n'+
-			'4) pong = respond : ping\n'+
-			'5) f!birthdaymac = wish a happy birthday to Mac Guy\n'+
-			'6) f!beshte, f!kion, f!bunga, f!ono = say a sentence of the charactere and a gif\n'+
-		    	'7) f!say = make the bot talk\n'+
-		    	'8) f!random lion king = say a random name from the Lion king and Lion guard\n'+
-		    	'9) f!bothair = says Oh bothair.\n'+
-		    	'10) f!ballast = says Oh ballast.\n'+
-		    	'11) f!blast = says How repetitive.```');
-            break;
         
 	case "f!kion" : await sleep(500 + random(500,0));
                         message.channel.send('Hevi Kabesa');
