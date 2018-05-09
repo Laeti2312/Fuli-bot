@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const GoogleImages = require('google-images');
+const client = new GoogleImages('003811769180029091279:wzvaj2fip4m', 'AIzaSyDbdq3k8N2GqXpB2FvACeMZcxb0SzODojg');
 
 var lionkingg;
 var lionking = ["Scar","Simba","Mufasa","Nala","Shenzi","Sarabi","Rafiki","Timon","Zazu","Ed","Shenzi clan","Banzai","Great Kings of the past","Pumbaa","Sarafina","Pride Landers","Simba Pride","Mole","Kovu","Kiara","Zira","Vitani","Nuka","Outsiders","Kion","Fuli","Askari","Bunga","Ono","Beshte","Uncle Max","Ma","Timon colony","Iron Joe","Army of Scar","Sumu","Janja","Ushari","Makucha","Kiburi","Reirei","Shupavu","Nduli","Dogo","Mzingo","The Zimwi","Makucha leap","Nne","Cheezi","Chungu","Njano","Goigoi","Dogo brothers","Tamka","Mapigano","Mpishi","Mwoga","Mzingo's parliament","Tano","Nyeusi","Uroho","Mwevi","Mwizi","Kopa","Mohatu","Lion Guard","Kopa","Jasiri","Makini","Furaha","Dhahabu","Mzaha","Mtoto","Hadari","Badili","Kifaru","Herman","Ona",];
@@ -84,6 +86,10 @@ bot.on('message', async function (message){
 				name: "f!blast",
 				value: "says How repetitive."
 			      },
+			      {
+				name: "f!search smth",
+				value: "google images random search smth"
+			      },
 			    ],
 			    timestamp: new Date(),
 			    footer: {
@@ -154,6 +160,12 @@ bot.on('message', async function (message){
             var reason = message.content.substring(10, message.content.length);
             message.channel.send(  reason + ' has ' +  Math.floor(random(100,0)) + '% foolishness'); 
             
+	}
+	if (message.content.toLowerCase().startsWith('f!search ')){
+            
+            var reason = message.content.substring(9, message.content.length);
+	    const images = await client.search(reason);
+	    message.channel.send(images[Math.floor(random(images.length,0))].url);
 	}
 	if(message.content.toLowerCase().startsWith('f!say')) {
 	    var reason = message.content.substring(5, message.content.length);
