@@ -149,10 +149,10 @@ bot.on('message', async function (message){
             
         }
 	
-	if (message.content.startsWith("f!kick") && ( message.member.roles.find("name", "Lion Guard") ||  message.member.roles.find("name", "Guard Helper"))) {
+	if (message.content.startsWith("f!kick") && ( message.member.roles.find("name", "lion guard"))) {
 		// Easy way to get member object though mentions.
 		var member= message.mentions.members.first();
-		if(!(member.roles.find("name", "Lion Guard") || member.roles.find("name", "Guard Helper"))){
+		if(!(member.roles.find("name", "lion guard"))){
 			// Kick
 			member.kick().then((member) => {
 			    // Successmessage
