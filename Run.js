@@ -148,6 +148,24 @@ bot.on('message', async function (message){
             break;
             
         }
+	
+	if (message.content.startsWith("f!kick") && ( message.member.roles.find("name", "Lion Guard") ||  message.member.roles.find("name", "Guard Helper"))) {
+		// Easy way to get member object though mentions.
+		var member= message.mentions.members.first();
+		if(!(member.roles.find("name", "Lion Guard") || member.roles.find("name", "Guard Helper"))){
+			// Kick
+			member.kick().then((member) => {
+			    // Successmessage
+			    message.channel.send(":wave: " + member.displayName + " has been successfully kicked ");
+			}).catch(() => {
+			     // Failmessage
+			    message.channel.send("Access Denied");
+			});
+		} else {
+			message.channel.send("Cannot kick an admin!");
+		}
+			
+	}
         
 	if (message.content.toLowerCase().startsWith('f!how are you ')){
             
