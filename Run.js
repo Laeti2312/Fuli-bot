@@ -159,7 +159,7 @@ bot.on('message', async function (message){
 			    message.channel.send(":wave: " + member.displayName + " has been successfully kicked ");
 			}).catch(() => {
 			     // Failmessage
-			    message.channel.send("Access Denied");
+			    message.channel.send("I have no Admin perms");
 			});
 		} else {
 			message.channel.send("Cannot kick an admin!");
